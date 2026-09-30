@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --neon-green: #00ff66;
+    --neon-green-dim: #00bb4b;
+    --neon-green-faint: rgba(0, 255, 102, 0.08);
+    --neon-green-glow: rgba(0, 255, 102, 0.4);
+    --terminal-bg: #030a05;
+    --terminal-panel: #06140b;
+    --terminal-border: #0d381c;
+  }
+
+  body {
+    font-family: 'Share Tech Mono', 'Space Mono', monospace, ui-monospace;
+    background-color: var(--terminal-bg);
+    color: var(--neon-green);
+  }
+}
+
+/* Neon text & box glow utilities */
+.text-neon {
+  color: #00ff66;
+  text-shadow: 0 0 5px rgba(0, 255, 102, 0.7), 0 0 12px rgba(0, 255, 102, 0.35);
+}
+
+.text-neon-bright {
+  color: #55ff99;
+  text-shadow: 0 0 8px rgba(0, 255, 102, 0.9), 0 0 20px rgba(0, 255, 102, 0.5);
+}
+
+.text-neon-dim {
+  color: #00aa44;
+}
+
+.border-neon {
+  border-color: #00ff66;
+  box-shadow: 0 0 8px rgba(0, 255, 102, 0.25);
+}
+
+.border-terminal {
+  border-color: #0e3b1c;
+}
+
+.bg-terminal-dark {
+  background-color: #020904;
+}
+
+.bg-terminal-panel {
+  background-color: rgba(5, 18, 10, 0.88);
+}
+
+/* CRT Scanlines and phosphor flicker */
+.crt-overlay {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.35) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+.crt-vignette {
+  background: radial-gradient(circle at center, transparent 65%, rgba(0, 15, 5, 0.7) 100%);
+  pointer-events: none;
+}
+
+/* Retro Custom Range Slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #061c0d;
+  height: 6px;
+  border-radius: 0px;
+  border: 1px solid #144927;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #00ff66;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 8px #00ff66;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: #00ff66;
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  box-shadow: 0 0 8px #00ff66;
+}
+
+/* Custom terminal scrollbars */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #020804;
+}
+::-webkit-scrollbar-thumb {
+  background: #0f401f;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff66;
+}

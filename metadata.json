@@ -1,0 +1,6 @@
+{
+  "name": "Neon Terminal Simulation",
+  "description": "Retro-futuristic terminal interface for real-time generative simulations including butterflies, fireflies, and wireframe 3D shapes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
